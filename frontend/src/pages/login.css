@@ -1,0 +1,111 @@
+.adminlogin {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+  }
+  .adminlogin .blur {
+    z-index: 6;
+  }
+ .adminlogin .screen-1 {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    gap: 2em;
+  }
+  .adminlogin .screen-1 .logo {
+      margin-top: -3em;
+    }
+    .adminlogin .screen-1 .email {
+     position: relative;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 20px;
+    color: #4d4d4d;
+    margin-top: -3em;
+    color: var(--text);
+    z-index: 10;
+}
+.adminlogin .screen-1 .email input {
+    outline: none;
+    border: none;
+}
+.adminlogin .screen-1 .email input::-moz-placeholder {
+    font-size: 0.9em;
+}
+.adminlogin .screen-1 .email input:-ms-input-placeholder {
+    
+    font-size: 0.9em;
+}
+.adminlogin input {
+    position: relative;
+    z-index: 20;
+}
+.adminlogin .screen-1 .email input::placeholder {
+    font-size: 0.9em;
+}
+.adminlogin .screen-1 .email ion-icon {
+    margin-bottom: -0.2em;
+}
+ .adminlogin .screen-1 .password {
+     z-index: 10;
+     position: relative;
+     padding: 1em;
+     display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 20px;
+    color: var(--text);
+  }
+ .adminlogin .screen-1 .password input {
+    outline: none;
+    border: none;
+  }
+ .adminlogin .screen-1 .password input::-moz-placeholder {
+
+    font-size: 0.9em;
+  }
+ .adminlogin .screen-1 .password input:-ms-input-placeholder {
+ 
+    font-size: 0.9em;
+  }
+ .adminlogin .screen-1 .password input::placeholder {
+
+    font-size: 0.9em;
+  }
+ .adminlogin .screen-1 .password ion-icon {
+    color: #4d4d4d;
+    margin-bottom: -0.2em;
+  }
+ .adminlogin .screen-1 .password .show-hide {
+    margin-right: -5em;
+  }
+ .adminlogin .screen-1 .login {
+    padding: 1em;
+    background: #3e4684;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+  }
+ .adminlogin .screen-1 .footer {
+    display: flex;
+    font-size: 0.7em;
+    gap: 14em;
+    padding-bottom: 10em;
+  }
+ .adminlogin .screen-1 .footer span {
+    cursor: pointer;
+  }
+  
+ .adminlogin button {
+    cursor: pointer;
+  }

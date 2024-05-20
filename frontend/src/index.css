@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../src/fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-BlackItalic.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-Bold.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-ExtraBold.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-Light.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-Black.ttf") format("truetype"),
+    url("../src/fonts/Montserrat-Thin.ttf") format("truetype"),
+}
+
+@font-face {
+  font-family: "Code";
+  src:  url("../src/fonts/NanumGothicCoding-Regular.ttf") format("truetype"),
+  url("../src/fonts/NanumGothicCoding-Bold.ttf") format("truetype"),
+}
+
+.btn > a {
+  color: white !important;
+}
+
+:root {
+  --primary: rgba(141, 22, 139, 1);
+  --bg: rgba(255, 255, 255, 1);
+  --text: rgba(18, 18, 18, 0.8);
+  --shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
+  --title: rgba(18, 18, 18, 1);
+  --linear :linear-gradient(rgba(103, 110, 243, 0.8), rgba(199, 29, 194, 0.8)) ; 
+  --primary-shadow: 0 0px 21px rgb(138 97 138);
+  --linear-shadow: linear-gradient(19deg, transparent 0%, transparent 52%, rgba(255,255,255,1) 55%, rgba(231,231,231,1) 100%);
+  --footer : rgba(202, 188, 215, 1);
+}
+
+.xx ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.cp {
+  color: var(--primary) !important;
+}
+.title1 {
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: 900;
+  display: contents;
+}
+.title2 {
+  color: var(--title);
+  font-size: 30px;
+  font-weight: 900;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.df-c {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section2 .dfw {
+  justify-content: center;
+}
+
+.secbox {
+  box-shadow: var(--shadow);
+    background-image: var(--linear-shadow);
+    width: 23rem;
+    height: 19rem;
+    padding: 3rem;
+    border: 2px solid transparent;
+    
+}
+
+.tbox {
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  background-image: var(--linear-shadow);
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  max-width: 14rem;
+}
+
+#root {
+  display: flex;
+  gap: 6rem;
+  flex-direction: column;
+}
+
+a.active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.xx {
+  
+  display: flex;
+  gap: 6rem;
+  flex-direction: column;
+}
+
+.footer {
+  padding: 2rem 3rem 4rem !important ;
+  background-color: var(--footer);
+}
+
+.fx-s{
+  align-items: flex-start !important;
+}
+
+.sec > .dfw {
+  gap: 2rem;
+}
+
+.footer > .df{
+  gap: 5rem;
+}
+
+
+.footer a:hover {
+  color: var(--primary) !important;
+}
+.footer-box {
+  width: 11rem;
+}

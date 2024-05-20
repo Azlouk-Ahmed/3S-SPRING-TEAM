@@ -1,0 +1,136 @@
+.service {
+    width: 40%;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.services > .df svg{
+    transform: scale(1.3);
+}
+
+.learnmore {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    color: var(--primary);
+}
+
+.teamimg {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.commentimg {
+    height: 3rem !important;
+    width: 3rem !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.btn a {
+    color: white !important;
+}
+
+.tal {
+    text-align: left;
+}
+
+.sl {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.sl .blur {
+    left: 25%;
+}
+
+.gap3 {
+    gap: 6rem;
+}
+
+.teambox {
+    padding: 4rem 4rem 0;
+    position: relative;
+}
+
+.teambox.even:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 70%;
+    width: 2px;
+    top: 61%;
+    background-color: var(--primary);
+    transform: translateY(-50%);
+}
+.teambox.even:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 70%;
+    width: 1px;
+    top: 61%;
+    background-color: var(--primary);
+    transform: translateY(-50%);
+}
+
+.left.manager {
+    text-align: right;
+}
+
+.left.manager> .df {
+    justify-content: end;
+}
+
+.teambox a {
+    cursor: pointer;
+}
+.teambox svg {
+    color: var(--primary) !important;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.p0 {
+    padding: 5px 0 !important;
+}
+
+.mantitle {
+    position: relative;
+
+    font-size: 30px !important;
+}
+.mantitle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text);
+    bottom: 0;
+    left: 0%;
+    font-size: 30px !important;
+    
+}
+
+.commentquote path{
+    color: var(--primary) !important;
+    font-size: 2rem;
+}
+
+.mantesti {
+    border: 1px solid var(--primary) !important;
+    padding: 1rem;
+    width: 100% !important;
+}
+
+.manager .skillbox {
+    box-shadow: var(--shadow);
+    border-radius: 0;
+    width: 32rem;   
+}

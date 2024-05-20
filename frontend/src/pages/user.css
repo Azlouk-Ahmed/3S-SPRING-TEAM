@@ -1,0 +1,245 @@
+.right {
+    width: 30%;
+}
+
+.left {
+    position: relative;
+    width :30%;
+}
+
+.centerside {
+    width: 30%;
+}
+
+.bar {
+    position: absolute;
+    left: -42rem;
+    top: 6rem;
+    z-index: -2;
+    width: 46rem;
+}
+.rightbar {
+    position: absolute;
+    right: -42rem;
+    top: -6rem;
+    z-index: -2;
+    width: 46rem;
+
+}
+
+.profile--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.profile--wrapper .centerside {
+    border-radius: 50%;
+    background-color: aquamarine;
+    aspect-ratio: 1;
+    border: 5px solid var(--primary);
+    box-shadow: var(--primary-shadow);
+    transform: scale(0.7);
+}
+.profile--wrapper .centerside img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.devparag {
+    padding-left: 2rem;
+    position: relative;
+}
+
+.devparag::before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--text);
+    position: absolute;
+    left: 0rem;
+}
+
+.skillbox {
+    padding: 1rem;
+    width: 35rem;
+    border: 2px solid var(--text);
+    border-top-left-radius: 3rem;
+    height: 35rem;
+  }
+
+  .gap-3 {
+    gap: 6rem !important;
+  }
+
+  .skills-wrapper > .df{
+    direction: ltr;
+  }
+
+  .skilltitle {
+    padding-right: 1rem;
+    width: fit-content;
+    margin: 0 0 0 auto;
+    border-right: 2px solid var(--primary);
+  }
+
+  .skills-wrapper {
+    padding: 2rem 0 0 2rem;
+    /* background: rebeccapurple; */
+    width: 85%;
+    height: 92%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    direction: rtl;
+  }
+
+  .skills-wrapper::-webkit-scrollbar {
+    background-color: rgb(175 173 179);
+    width: 5px;
+  }
+  .skills-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 5px;
+    width: 5px;
+  }
+
+  .skills {
+    position: relative;
+  }
+  .range {
+    width: 11rem;
+    background-color: var(--primary);
+  }
+
+  .skil {
+    text-align: right; /* Right-align text */
+    padding-top: 5px; /* Add top padding */
+    padding-bottom: 5px; /* Add bottom padding */
+    color: white; /* White text color */
+    background-color: rgba(255, 255, 255, 0.84);
+  }
+
+  .sw {
+    gap: 0;
+    /* justify-content: space-between; */
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .skillname {
+    width: 4rem;
+    /* background-color: #04AA6D; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+  }
+  
+  .html {width: 90%; background-color: #04AA6D;} /* Green */
+  .css {width: 80%; background-color: #2196F3;} /* Blue */
+  .js {width: 65%; background-color: rgba(255, 255, 255, 0.84);} /* Red */
+  .php {width: 60%; background-color: #808080;}
+.pp {
+    margin-bottom: 3rem;
+}
+  .projectbox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: var(--shadow);
+    width: 15rem;
+    border-left: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 1rem;
+}
+
+.projectbox > .btn {
+  position: absolute;
+  bottom: -3rem;
+}
+
+.projectbox img {
+      width: 14.5rem;
+    height: 9rem;
+    object-fit: cover;
+  }
+
+  .testi .swiper {
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    height: fit-content;
+    padding: 3rem 0;
+    overflow: visible;
+  }
+  
+  .testi .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .testi .swiper-slide p {
+    width: 40%;
+  }
+  
+  .testi .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .testi .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    border:1px solid var(--text);
+    opacity: 1;
+    background: transparent;
+  }
+  
+  .testi .swiper-pagination-bullet-active {
+    color: var(--primary);
+    background: var(--primary);
+  }
+
+  .webdev {
+    font-family: "Code" !important;
+  }
+
+  .manager-proj {
+    border: none !important;
+    box-shadow: none !important;
+    gap: 2rem !important;
+    width: 30%;
+  }
+
+  .manager-proj img {
+    width: 100% !important;
+  }
+
+  .rev {
+    flex-direction: column-reverse;
+  }
+
+  .manager-proj  > .btn {
+     position:unset; 
+}
+  

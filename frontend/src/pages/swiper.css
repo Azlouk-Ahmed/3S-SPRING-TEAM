@@ -1,0 +1,21 @@
+.carousel .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel .swiper-slide img {
+    display: block;
+    width: 7rem;
+    object-fit: cover;
+  }
+
+  .carousel .swiper-wrapper {
+    align-items: center;}

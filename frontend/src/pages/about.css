@@ -1,0 +1,25 @@
+.jump {
+    width: 40%;
+}
+
+.parag {
+    width: 50%;
+    position: relative;
+}
+
+.ml {
+    margin-left: auto;
+}
+
+.blur{
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(212px);
+    filter: blur(150px);
+    position: absolute;
+    z-index: -1;
+    width: 30rem;
+    top: 4rem;
+    height: 6rem;
+    left: -3rem;
+}
