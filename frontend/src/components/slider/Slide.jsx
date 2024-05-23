@@ -12,7 +12,7 @@ function Slide() {
                     </div>
                 </div>
                 <div class="card-content">
-                    <h2 class="name">laura bora</h2>
+                    <h2 class="title3">laura bora</h2>
                     <div className="df">
                     <TbStarFilled /><TbStarFilled /><TbStarFilled /><TbStar />
 

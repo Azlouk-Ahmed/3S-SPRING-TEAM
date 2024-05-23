@@ -103,6 +103,15 @@ body {
   flex-direction: column;
 }
 
+.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid red;
+  color: red;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
 a.active {
   color: var(--primary);
   font-weight: bold;
@@ -113,6 +122,12 @@ a.active {
   display: flex;
   gap: 6rem;
   flex-direction: column;
+}
+
+.w16{
+  width: 16rem;
+    height: 20rem;
+    object-fit: fill;
 }
 
 .footer {

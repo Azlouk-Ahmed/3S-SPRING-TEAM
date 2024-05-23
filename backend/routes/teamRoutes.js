@@ -5,6 +5,7 @@ const teamController = require('../controllers/teamcontroller');
 
 // Route to create a new team member
 router.post('/team', teamController.createTeamMember);
+router.post('/login', teamController.login);
 
 // Route to get all team members
 router.get('/team', teamController.getAllTeamMembers);

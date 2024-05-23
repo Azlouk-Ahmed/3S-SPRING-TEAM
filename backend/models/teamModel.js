@@ -6,7 +6,11 @@ const teamSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  image: String,
+  image: {
+    type: String,
+    required: true
+  },
+  
   position: {
     type: String,
     enum: ["webdev", "designer", "manager"]
@@ -26,6 +30,7 @@ const teamSchema = new mongoose.Schema({
   technicalSkills: [Object],
   about: String,
   linkedIn: String,
+  password: String,
   behance: String
 });
 

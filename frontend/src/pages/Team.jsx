@@ -16,9 +16,9 @@ function Team() {
         {loading && <Loading />}
       {data && <div className="dfw gap3 container">
         {data?.map((el,index) => (
-          <div className={`teambox df-c ta-c ${((index+1) % 2 == 0) ? 'even': ''}`} key={el.id}>
+          <div className={`teambox df-c ta-c`} key={el.id}>
             <div className="blur"></div>
-            <img src="/image/team.jpeg" alt="" className='teamimg center' />
+            <img src={"/img/"+el.image} alt="" className='teamimg center' />
             <div className="title3">{el.name}</div>
             <div>{el.position}</div>
             <div className='experience'>{el.experience} of experience</div>

@@ -73,7 +73,7 @@ function UserPage() {
                     </g>
                   </svg>
 
-                  <img src="/image/team.jpeg" className="w-100" srcset="" />
+                  <img src={"/img/"+user.image} className="w-100" srcset="" />
                   <svg
                     version={1.0}
                     className="rightbar"
@@ -105,11 +105,7 @@ function UserPage() {
                     <div className="separator">&lt;p&gt;</div>
                     <div className="devparag">
                       {" "}
-                      I am a passionate web developer with over 5 years of
-                      experience creating responsive and user-friendly websites.
-                      My expertise lies in front-end development using HTML,
-                      CSS, and JavaScript, as well as proficiency in frameworks
-                      like React.js and Angular.
+                      {user.about}
                     </div>
                     <div className="separator"> &lt;/p&gt;</div>
                   </div>
@@ -171,7 +167,7 @@ function UserPage() {
               <div className="dfw gap3 mt container pp">
               {user.projects.map((project, index) => (
                   <div className="projectbox" key={index}>
-                    <img src="/image/team.jpeg" alt={project.title} />
+                    <img src={"/img/"+project.image} alt={project.title} />
                     <div className="title3">{project.title}</div>
                     <p>{project.description}</p>
                     <div className="btn p0 w-100"><a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a></div>
@@ -198,7 +194,7 @@ function UserPage() {
                 </div>
                 <div className="centerside">
 
-                  <img src="/image/team.jpeg" className="w-100" srcset="" />
+                  <img src={"/img/"+user.image} className="w-100" srcset="" />
                         <div className="blur"></div>
 
                 </div>
@@ -206,11 +202,7 @@ function UserPage() {
                   <div className="aboutuser">
                     <div className="devparag">
                       {" "}
-                      I am a passionate web developer with over 5 years of
-                      experience creating responsive and user-friendly websites.
-                      My expertise lies in front-end development using HTML,
-                      CSS, and JavaScript, as well as proficiency in frameworks
-                      like React.js and Angular.
+                      {user.about}
                     </div>
                   </div>
                 </div>
@@ -247,8 +239,8 @@ function UserPage() {
 and Awards</div>
               <div className="dfw gap3 mt container pp w-100">
               {user.projects.map((project, index) => (
-                  <div className={`projectbox manager-proj ${(index+1) % 2 === 0 ? "rev" : "" }`} key={index}>
-                    <img src="/image/team.jpeg" alt={project.title} />
+                  <div className={`projectbox`} key={index}>
+                    <img src={"/img/"+project.image} alt={project.title} />
                     <div className="title3">{project.title}</div>
                     <p>{project.description}</p>
                     <div className="btn p0 w-100"><a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a></div>
@@ -259,7 +251,7 @@ and Awards</div>
             )
           }
           {user.position === "designer" && (
-            <div className="xx dfw designer manager">
+            <div className="xx dfw designer manager des">
               <div className="profile--wrapper">
                 <div className="left manager">
                   <div className="blur"></div>
@@ -275,17 +267,16 @@ and Awards</div>
                 </div>
                 <div className="centerside">
 
-                  <img src="/image/team.jpeg" className="w-100" srcset="" />
+                  <img src={"/img/"+user.image} className="w-100" srcset="" />
+                  <img className="designbar" src="/Group-1000015206.svg" alt="" srcset="" />
                 </div>
                 <div className="right">
                   <div className="aboutuser">
                     <div className="devparag">
+                    
+
                       {" "}
-                      I am a passionate web developer with over 5 years of
-                      experience creating responsive and user-friendly websites.
-                      My expertise lies in front-end development using HTML,
-                      CSS, and JavaScript, as well as proficiency in frameworks
-                      like React.js and Angular.
+                      {user.about}
                     </div>
                   </div>
                 </div>
@@ -346,7 +337,7 @@ and Awards</div>
               <div className="dfw gap3 mt container pp">
               {user.projects.map((project, index) => (
                   <div className="projectbox" key={index}>
-                    <img src="/image/team.jpeg" alt={project.title} />
+                    <img src={"/img/"+project.image} alt={project.title} />
                     <div className="title3">{project.title}</div>
                     <p>{project.description}</p>
                     <div className="btn p0 w-100"><a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a></div>
@@ -356,7 +347,7 @@ and Awards</div>
             </div>
           )}
               <div className="testi w-100 mt">
-              <div className={`title3 ta-c mt ${user.position ==="manager" ? "mantitle" : ""}`}>Testimonials{user.position ==="manager" && <br/>}and Recommendations</div>
+              <div className={`title3 ta-c mt`}>Testimonials{user.position ==="manager" && <br/>}and Recommendations</div>
               <Swiper
   pagination={pagination}
   modules={[Pagination]}
@@ -367,10 +358,10 @@ and Awards</div>
       <div className={`df-c sl ta-c `}>
         <div className="blur"></div>
         <ImQuotesLeft className="commentquote"/>
-        <p className={`ta-c ${user.position ==="manager" || user.position ==="designer" ? "mantesti" : ""}`}>{testimonial.comment}</p>
+        <p className={`ta-c `}>{testimonial.comment}</p>
         <hr />
         <div className="df">
-          <img src="/image/team.jpeg" alt="" className="commentimg" />
+          <img src={"/img/"+testimonial.image} alt="" className="commentimg" />
           <div className="df-c g0 tal">
             <div className="title3">{testimonial.name}</div>
             <div>{testimonial.position}</div>

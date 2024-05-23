@@ -57,6 +57,7 @@
 .teambox {
     padding: 4rem 4rem 0;
     position: relative;
+    width: 17rem;
 }
 
 .teambox.even:before {

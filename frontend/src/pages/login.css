@@ -1,23 +1,27 @@
 .adminlogin {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    overflow-y: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
+  user-select: none;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+ 
+  padding: 3rem;
   }
   .adminlogin .blur {
     z-index: 6;
   }
  .adminlogin .screen-1 {
-    padding: 2em;
+  padding: 6rem 2em;
     display: flex;
     flex-direction: column;
     border-radius: 30px;
-    gap: 2em;
+    width: 31rem;
+    gap: 1em;
+  }
+
+
+  .f1 {
+    font-size: 25px;
   }
   .adminlogin .screen-1 .logo {
       margin-top: -3em;
@@ -36,7 +40,8 @@
 }
 .adminlogin .screen-1 .email input {
     outline: none;
-    border: none;
+    border: 2px solid var(--text);
+    background-color: transparent;
 }
 .adminlogin .screen-1 .email input::-moz-placeholder {
     font-size: 0.9em;
@@ -66,8 +71,9 @@
     color: var(--text);
   }
  .adminlogin .screen-1 .password input {
-    outline: none;
-    border: none;
+  outline: none;
+  border: 2px solid var(--text);
+  background-color: transparent;
   }
  .adminlogin .screen-1 .password input::-moz-placeholder {
 

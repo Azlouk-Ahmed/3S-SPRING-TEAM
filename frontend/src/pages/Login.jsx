@@ -1,51 +1,80 @@
-import React from 'react'
-import "./login.css"
+import React, { useState } from 'react';
+import axios from 'axios';
+import "./login.css";
+import { useNavigate } from 'react-router-dom';
+import { MdEmail } from 'react-icons/md';
+import { CiLock } from 'react-icons/ci';
 
 function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      const response = await axios.post('http://localhost:5000/admin/login', { email, password });
+
+      console.log(response);
+      
+      const {admin } = response.data;
+
+      console.log('Login successful:', admin);
+      if(!admin) {
+        setError("email not found !")
+      }else {
+        localStorage.setItem('admin', JSON.stringify(admin));
+        navigate('/admin/page');
+      }
+    } catch (error) {
+      setError(error.response?.data?.error || 'An error occurred during login');
+    }
+  };
+
   return (
-    <form className="adminlogin">
-    <div className="screen-1 box">
-      <svg className="logo" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" width={300} height={300} viewBox="0 0 640 480" xmlSpace="preserve">
-        <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
-          <circle style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(61,71,133)', fillRule: 'nonzero', opacity: 1}} cx={0} cy={0} r={40} />
-        </g>
-        <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
-          <circle style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(255,255,255)', fillRule: 'nonzero', opacity: 1}} cx={0} cy={0} r={40} />
-        </g>
-        <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
-          <circle style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(255,255,255)', fillRule: 'nonzero', opacity: 1}} cx={0} cy={0} r={40} />
-        </g>
-        <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
-          <circle style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(255,255,255)', fillRule: 'nonzero', opacity: 1}} cx={0} cy={0} r={40} />
-        </g>
-        <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
-          <polygon style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(255,255,255)', fillRule: 'nonzero', opacity: 1}} points="-50,-50 -50,50 50,50 50,-50 " />
-        </g>
-        <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
-          <polygon style={{stroke: 'rgb(0,0,0)', strokeWidth: 0, strokeDasharray: 'none', strokeLinecap: 'butt', strokeDashoffset: 0, strokeLinejoin: 'miter', strokeMiterlimit: 4, fill: 'rgb(255,255,255)', fillRule: 'nonzero', opacity: 1}} vectorEffect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 " />
-        </g>
-      </svg>
-      <div className="email">
-        <div className="blur"></div>
-        <label htmlFor="email">Email Address</label>
-        <div className="sec-2">
-          <ion-icon name="mail-outline" />
-          <input type="email" name="email" placeholder="Username@gmail.com" />
+    <form className="adminlogin" onSubmit={handleSubmit}>
+      <div className="screen-1 box">
+        <div className="email mt">
+          <div className="blur"></div>
+          <label htmlFor="email">Email Address</label>
+          <div className="sec-2 df">
+            <MdEmail className='f1'/>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Username@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} 
+              required
+            />
+          </div>
         </div>
-      </div>
-      <div className="password">
-        <div className="blur"></div>
-        <label htmlFor="password">Password</label>
-        <div className="sec-2">
-          <ion-icon name="lock-closed-outline" />
-          <input className="pas" type="password" name="password" placeholder="············" />
-          <ion-icon className="show-hide" name="eye-outline" />
+        <div className="password">
+          <div className="blur"></div>
+          <label htmlFor="password">Password</label>
+          <div className="sec-2 df">
+            <CiLock className='f1' />
+            <input 
+              className="pas" 
+              type="password" 
+              name="password" 
+              placeholder="············"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} 
+              required
+            />
+            <ion-icon className="show-hide" name="eye-outline" />
+          </div>
         </div>
+        {error && <div className="error">{error}</div>}
+
+        <button className="btn w-100" type="submit">Login</button>
       </div>
-      <button className="btn w-100">Login </button>
-    </div>
-  </form>
-  )
+    </form>
+  );
 }
 
-export default Login
+export default Login;

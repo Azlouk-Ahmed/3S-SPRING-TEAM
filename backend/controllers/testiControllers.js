@@ -21,6 +21,7 @@ exports.getAllTestimonials = async (req, res) => {
   }
 };
 
+
 // Controller for updating a testimonial by ID
 exports.updateTestimonial = async (req, res) => {
   try {

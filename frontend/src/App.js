@@ -11,8 +11,19 @@ import Admin from './pages/Admin.jsx';
 import EditUserInfo from './pages/EditUserInfo.jsx';
 import UserPage from './pages/UserPage.jsx';
 import Productspage from './pages/Productspage.jsx';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [auth, setauth] = useState(null)
+
+  useEffect(() => {
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    if (admin) {
+      setauth(admin);
+    }
+  }, []);
+
   return (
     <BrowserRouter>
     <Navbar />
@@ -27,6 +38,7 @@ function App() {
           <Route path="/admin/page/user/:id" element={<EditUserInfo />} />
           <Route path="/team/:id" element={<UserPage />} />
           <Route path="/products" element={<Productspage />} />
+          
         </Routes>
       </div>  
       <Footer />

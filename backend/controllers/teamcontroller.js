@@ -11,6 +11,27 @@ exports.createTeamMember = async (req, res) => {
   }
 };
 
+exports.login = async (req, res) => {
+  try {
+    const admin = await Team.findOne({email: req.body.email});
+    if (!admin) {
+      return res.status(500).json({ error: "email not found" });
+      
+    }
+    if(admin) {
+      if(admin.password === req.body.password) {
+        res.status(200).json({admin});
+        
+      }else {
+        return res.status(500).json({ error: "incorrect password" });
+      }
+
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 // Controller for fetching all team members
 exports.getAllTeamMembers = async (req, res) => {
   try {
@@ -55,5 +76,5 @@ exports.deleteTeamMember = async (req, res) => {
   }
 };
 
-// Export the controllers
+
 module.exports = exports;

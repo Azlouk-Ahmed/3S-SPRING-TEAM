@@ -3,8 +3,10 @@ import "./admin.css"
 import { useFetchData } from '../hooks/useFetchData';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Admin() {
+    const navigate = useNavigate();
     const {data} = useFetchData("http://localhost:5000/admin/team");
 
     const [teamdata, setteamdata] = useState([]);
@@ -256,15 +258,29 @@ function Admin() {
           setTestimonials(newTestimonials);
       };
 
-
+      const logout = () => {
+        console.log("logged out");
+        localStorage.removeItem('admin');
+        navigate('/admin');
+    };
+    
+    useEffect(() => {
+        const admin = JSON.parse(localStorage.getItem('admin'));
+        if (!admin) {
+            navigate('/admin');
+        }
+      }, []);
   return (
     <div className="adminpage addportfolio">
-         <form className="formcontent box" onSubmit={handleSubmit}>
+        <div className="ta-c title2 df jc-c"> welcome back admin <button type='button' onClick={logout} className="btn2" >logout</button></div>
+        
+         <form className="admform" onSubmit={handleSubmit}>
         <div className="notification-header">
       </div>
         <div className="row">
-        <h4>Basic Details</h4>
-                    <div className="input-group input-group-icon">
+        <h4>add a team</h4>
+                    <div className="df">
+                    <div className="input-group input-group-icon ">
                     <h4>name</h4>
                         <input type="text" placeholder="Name" value={name} onChange={handleNameChange} />
                     </div>
@@ -272,6 +288,9 @@ function Admin() {
                     <h4>experience</h4>
                         <input type="number" placeholder="experience" value={experience} onChange={handleaddexperience} />
                     </div>
+
+                    </div>
+                    <div className="df">
                     <div className="input-group input-group-icon">
                     <h4>about</h4>
                         <input type="text" placeholder="Description" value={descriptionp} onChange={handleDescriptionChangep} />
@@ -281,6 +300,9 @@ function Admin() {
                         <input type="text" placeholder="linkedin" value={linkedin} onChange={handlelinkedinChange} />
 
                     </div>
+
+                    </div>
+                    <div className="df">
                     <div className="input-group input-group-icon">
                     <h4>behance link</h4>
                         <input type="text" placeholder="behance" value={behance} onChange={handlebehanceChange} />
@@ -293,8 +315,10 @@ function Admin() {
                             <option value="webdev">web developper</option>
                         </select>
                     </div>
-                    <div className="input-group input-group-icon df-c">
-                        <label htmlFor="img">Image</label>
+
+                    </div>
+                    <div className="input-group input-group-icon ">
+                        <label htmlFor="img" className='fileimg'><img src="/add-image-svgrepo-com.svg" alt="" srcset=""  className="addimg"/></label>
                         <input type="file" id='img' placeholder="Image" onChange={handleImageChange} />
                     </div>
         <div className="input-group input-group-icon df-c">
@@ -314,7 +338,7 @@ function Admin() {
                 onChange={handleSoftSkillRangeChange}
                 placeholder="Enter range"
             />
-            <div className="btn" onClick={handleAddSkill}>Add</div>
+            <div className="btn p0" onClick={handleAddSkill}>Add</div>
             </div>
       <div className="df">
         {skills.map((skill, index) => (
@@ -343,7 +367,7 @@ function Admin() {
                 onChange={handletechnicalSkillsrange}
                 placeholder="Enter technicalSkills"
             />
-            <div className="btn" onClick={handleAddtechnicalSkills}>Add</div>
+            <div className="btn p0" onClick={handleAddtechnicalSkills}>Add</div>
             </div>
       <div className="df">
         {technicalSkills.map((aw, index) => (
@@ -362,13 +386,19 @@ function Admin() {
 
         <div className="input-group input-group-icon">
                     <h4>Project Details</h4>
-                    <div className="df">
-                    <input type="file" placeholder="Image URL"  onChange={handleProjectImageChange} />
+                    <div className="df-c">
+                    <label htmlFor="projimg" className='fileimg' >
+                        
+                    <input type="file" placeholder="Image URL" id='projimg'  onChange={handleProjectImageChange} />
+                    <img src="/add-image-svgrepo-com.svg" alt="" srcset=""  className="addimg"/>
+                    </label>
                     <input type="text" placeholder="Title" value={projectTitle} onChange={handleProjectTitleChange} />
                     <input type="text" placeholder="Description" value={projectDescription} onChange={handleProjectDescriptionChange} />
+                    <div className="df">
                     <input type="text" placeholder="Link" value={projectLink} onChange={handleProjectLinkChange} />
 
-                    <button type="button" className="btn" onClick={handleAddProject}>Add</button>
+                    <button type="button" className="btn p0" onClick={handleAddProject}>Add</button>
+                    </div>
                     </div>
                 </div>
                 <div className=" df">
@@ -383,12 +413,15 @@ function Admin() {
         </div>
         <div className="input-group input-group-icon">
     <h4>Testimonial Details</h4>
-    <div className="df">
-        <input type="file" placeholder="Image URL" onChange={handleTestimonialImageChange} />
+    <div className="df-c">
+        <label className='fileimg' htmlFor="testimg">
+        <input type="file" placeholder="Image URL" id='testimg' onChange={handleTestimonialImageChange} />
+        <img src="/add-image-svgrepo-com.svg" alt="" srcset=""  className="addimg"/>
+        </label>
         <input type="text" placeholder="Comment" value={userComment} onChange={handleUserCommentChange} />
         <input type="text" placeholder="Position" value={userPosition} onChange={handleUserPositionChange} />
-        <input type="text" placeholder="Name" value={userName} onChange={handleUserNameChange} />
-        <button type="button" className="btn" onClick={handleAddTestimonial}>Add</button>
+        <div className="df"><input type="text" placeholder="Name" value={userName} onChange={handleUserNameChange} />
+        <button type="button" className="btn p0" onClick={handleAddTestimonial}>Add</button></div>
     </div>
 </div>
 <div className="df">
@@ -401,28 +434,31 @@ function Admin() {
 </div>
         <div className="row">
         </div>
-        <button className="btn w-100 mt">submit</button>
+        <button className="btn p0 mt">submit</button>
     </form>
     <table>
     <thead>
         <tr>
-            <th>Image</th>
+            <th>Link</th>
             <th>Name</th>
             <th>Experience</th>
             <th>Position</th>
             <th>Description</th>
+            <th>Image</th>
         </tr>
     </thead>
     <tbody>
         {teamdata?.map((item, index) => (
-            <tr key={index}>
+            <>
+            {item.role != "admin" && <tr key={index}>
                 <td><Link to={"user/"+item._id}>edit info</Link> </td>
-                <td>{item.image}</td>
                 <td>{item.name}</td>
                 <td>{item.experience}</td>
                 <td>{item.position}</td>
                 <td>{item.about}</td>
-            </tr>
+                <td>{item.image}</td>
+            </tr>}
+            </>
         ))}
     </tbody>
 </table>

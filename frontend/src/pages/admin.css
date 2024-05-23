@@ -1,12 +1,12 @@
 table {
     border-collapse: collapse;
-    box-shadow: 0 5px 10px #e1e5ee;
-    background-color: white;
+    box-shadow: var(--shadow);
+    background-color: var(--bg);
     text-align: left;
     overflow: hidden;
   }
   table thead {
-    box-shadow: 0 5px 10px #e1e5ee;
+    box-shadow: var(--shadow);
   }
   table th {
     padding: 1rem 2rem;
@@ -44,7 +44,7 @@ table {
     text-align: right;
   }
   table tr:nth-child(even) {
-    background-color: #f4f6fb;
+    background-color: var(--footer);
   }
 
   .adminpage {
@@ -53,6 +53,31 @@ table {
     flex-direction: column;
     justify-content: center;
     padding: 0 6rem;
+  }
+
+  .fileimg {
+    color: #2962ff;
+  }
+
+  .addimg {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+
+  .admform {
+    padding: 0 13rem;
+  }
+  .admform input{
+    border: 2px solid var(--text) !important;
+  }
+
+  .admform  input[type="file"] {
+    display: none;
+  }
+
+  .df .input-group {
+    width: 45%;
   }
 
 
