@@ -111,6 +111,15 @@ body {
   border-radius: 4px;
   margin: 20px 0;
 }
+.sent {
+  padding: 10px;
+  background: #b9edb4;
+  border: 1px solid green;
+  color: reen;
+  font-size: 10px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
 
 a.active {
   color: var(--primary);

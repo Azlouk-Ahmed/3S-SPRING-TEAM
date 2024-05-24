@@ -231,7 +231,6 @@ const Modal = ({ handleClose, text, type }) => {
 
 const ModalText = ({ text }) => (
   <div className="modal-text">
-    <h3>{text}</h3>
     <Contact />
   </div>
 );

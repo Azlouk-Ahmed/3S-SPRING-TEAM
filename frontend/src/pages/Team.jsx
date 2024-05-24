@@ -16,6 +16,8 @@ function Team() {
         {loading && <Loading />}
       {data && <div className="dfw gap3 container">
         {data?.map((el,index) => (
+          <>
+          {el.role !=="admin" &&
           <div className={`teambox df-c ta-c`} key={el.id}>
             <div className="blur"></div>
             <img src={"/img/"+el.image} alt="" className='teamimg center' />
@@ -24,7 +26,8 @@ function Team() {
             <div className='experience'>{el.experience} of experience</div>
             <div className="df center"><a href={el.linkedIn}><CiLinkedin /></a> <a href={el.behance}><FaBehance /></a></div>
             <div className="btn center w-100 p0"><Link to={"/team/"+el._id}>view</Link></div>
-          </div>
+          </div>}
+          </>
         ))}
       </div>}
     </div>

@@ -17,10 +17,16 @@
     width: clamp(50%, 700px, 90%);
   
     margin: auto;
-    padding: 1rem 2rem;
+    padding: 4rem 2rem;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: rgba(49, 25, 49, 1);
+}
+
+.modal input, .modal textarea {
+    background-color: transparent !important;
+    border: 2px solid white;
+    color: white !important;
 }

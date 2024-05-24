@@ -105,6 +105,7 @@ function UserPage() {
                     <div className="separator">&lt;p&gt;</div>
                     <div className="devparag">
                       {" "}
+
                       {user.about}
                     </div>
                     <div className="separator"> &lt;/p&gt;</div>
@@ -277,6 +278,7 @@ and Awards</div>
 
                       {" "}
                       {user.about}
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi, odio earum consectetur ipsam nemo aperiam aliquam fugiat deleniti eos dicta.
                     </div>
                   </div>
                 </div>
